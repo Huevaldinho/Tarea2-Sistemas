@@ -7,8 +7,8 @@
 #define NUM_THREADS 10
 
 
-// TAREA 2
-/* Ejercicio 1
+//                              TAREA 2
+/*  EJERCICIO 1
     Cree un hilo padre que cree a su vez 10 hilos hijos a los cuáles les pasará 
     por parámetros un identificador y un número aleatorio de segundos
     que cada hilo hijo debe dormir (sleep). 
