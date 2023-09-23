@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <stdlib.h>
-#include <time.h>
 
 #define NUM_THREADS 5
 #define fiboAcalcular 30
@@ -22,7 +21,6 @@ pthread_mutex_t arrayMutex[fiboAcalcular];//Sincroniadores
 void * fibonacci(void * num){
     //Saca el numero que envia el padre al crear el hilo
     int n = *((int *)num);
-    int siguienteFibo = n+1;
 
     if (n>fiboAcalcular)//Termina porque ya calculó el Fibo(n)
         pthread_exit(NULL);
@@ -43,6 +41,7 @@ void * fibonacci(void * num){
     }
     //* Descomentar para ver el calculo de Fibo hecho por cada hilo.
     //printf("Hilo: %lu calculó Fibo(%d) = %d\n", (unsigned long)pthread_self(),n,array[n]);
+    int siguienteFibo = n+1;
     fibonacci(&(siguienteFibo));
 }
 
